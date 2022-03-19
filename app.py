@@ -23,7 +23,7 @@ def predict_churn(Customer_Age,Months_on_book,Total_Relationship_Count,Months_In
     data2=pd.DataFrame([l], columns=cols)
     # data2 = pd.get_dummies( data2, columns=data2.select_dtypes(include=["object", "category"]).columns.tolist(), drop_first=True,)
     # data2 = data2.reindex(columns = x_train.columns, fill_value=0)
-    data2=data2["Income_Category"].replace("abc", np.nan, inplace=True)
+    data2["Income_Category"].replace("abc", np.nan, inplace=True)
     data2 = pd.get_dummies( data2, columns=data2.select_dtypes(include=["object", "category"]).columns.tolist(), drop_first=True,)
     data2 = data2.reindex(columns = data2.columns, fill_value=0)
     # creating a list of numerical variables
