@@ -64,9 +64,13 @@ def predict_churn(Customer_Age,Months_on_book,Total_Relationship_Count,Months_In
     # and "categorical_features"
     pipe = Pipeline(steps=[("pre", preprocessor)])
     data3=pipe.fit_transform(data2)
-    prediction=best_model.predict([data3])
+    print(data3)
+    print(np.array(data3))
+    prediction=5
+#     prediction=best_model.predict([data3])
     print(prediction)
-    return int(round(prediction[0], 0))
+#     return int(round(prediction[0], 0))
+    return prediction
 
 
 
