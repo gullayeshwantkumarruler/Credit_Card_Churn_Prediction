@@ -68,7 +68,6 @@ def predict_churn(Customer_Age,Months_on_book,Total_Relationship_Count,Months_In
         (
             "GBM",
             best_model
-            ),
         ),
     ]
 )
