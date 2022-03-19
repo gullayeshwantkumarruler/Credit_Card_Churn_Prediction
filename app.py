@@ -26,52 +26,9 @@ def predict_churn(Customer_Age,Months_on_book,Total_Relationship_Count,Months_In
     data2["Income_Category"].replace("abc", np.nan, inplace=True)
     data2 = pd.get_dummies( data2, columns=data2.select_dtypes(include=["object", "category"]).columns.tolist(), drop_first=True,)
 #     data2 = data2.reindex(columns = data2.columns, fill_value=0)
-    # creating a list of numerical variables
-#     numerical_features = [
-#          'Customer_Age', 'Months_on_book',
-#            'Total_Relationship_Count', 'Months_Inactive_12_mon',
-#            'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal',
-#            'Avg_Open_To_Buy', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt',
-#            'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio']
-
-#     # creating a transformer for numerical variables, which will apply simple imputer on the numerical variables
-#     numeric_transformer = Pipeline(steps=[("imputer", SimpleImputer(strategy="median"))])
-
-
-#     # creating a list of categorical variables
-#     categorical_features = ['Gender',
-#            'Dependent_count', 'Education_Level', 'Marital_Status',
-#            'Income_Category', 'Card_Category']
-
-#     # creating a transformer for categorical variables, which will first apply simple imputer and
-#     #then do one hot encoding for categorical variables
-#     categorical_transformer = Pipeline(
-#         steps=[
-#             ("imputer", SimpleImputer(strategy="most_frequent")),
-#             ("onehot", OneHotEncoder(handle_unknown="ignore")),
-#         ]
-#     )
-#     # handle_unknown = "ignore", allows model to handle any unknown category in the test data
-
-#     # combining categorical transformer and numerical transformer using a column transformer
-
-#     preprocessor = ColumnTransformer(
-#         transformers=[
-#             ("num", numeric_transformer, numerical_features),
-#             ("cat", categorical_transformer, categorical_features),
-#         ],
-#         remainder="drop",
-#     )
-#     # remainder = "drop" has been used, it will drop the variables that are not present in "numerical_features"
-#     # and "categorical_features"
-#     pipe = Pipeline(steps=[("pre", preprocessor)])
-#     data2 = data2.reindex(columns =cols, fill_value=0)
-#     data3=pipe.fit_transform(data2)
-#     prediction=5
     prediction=best_model.predict(data2)
     print(prediction)
     return int(round(prediction[0], 0))
-#     return prediction
 
 
 
