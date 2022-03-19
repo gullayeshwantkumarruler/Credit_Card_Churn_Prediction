@@ -44,9 +44,14 @@ def main():
     # Numerical
     Customer_Age= col1.number_input("Age of the customer", min_value=0, max_value=100)
     Months_on_book=col2.number_input("Months on Book", min_value=0, max_value=240)
-    Total_Relationship_Count=col1.selectbox("Number of Products used",(0,1,2,3,4,5,6))
-    Months_Inactive_12_mon=col2.selectbox("Number Months Inactive",(0,1,2,3,4,5,6,7,8,9,10,11,12))
-    Contacts_Count_12_mon=col1.selectbox("Number of interactions",(0,1,2,3,4,5,6,7,8,9,10,11,12))
+#     Total_Relationship_Count=col1.selectbox("Number of Products used",(0,1,2,3,4,5,6))
+#     Months_Inactive_12_mon=col2.selectbox("Number Months Inactive",(0,1,2,3,4,5,6,7,8,9,10,11,12))
+#     Contacts_Count_12_mon=col1.selectbox("Number of interactions",(0,1,2,3,4,5,6,7,8,9,10,11,12))
+    
+    Total_Relationship_Count=col1.number_input("Relationship Count", min_value=0, max_value=6)
+    Months_Inactive_12_mon=col2.number_input("Number of inactive months", min_value=0, max_value=12)
+    Contacts_Count_12_mon=col1.number_input("Number of interactions", min_value=0, max_value=12)
+    
     Credit_Limit=col2.number_input("Credit Limit", min_value=0, max_value=50000)
     Total_Revolving_Bal= col1.number_input("Revolving balance to be paid", min_value=0, max_value=50000)
     Avg_Open_To_Buy=col2.number_input("Money available for use", min_value=0, max_value=50000)
@@ -57,7 +62,7 @@ def main():
     Avg_Utilization_Ratio=col1.number_input("utilization ratio", min_value=0, max_value=1)
     # categorical
     Gender= col2.selectbox("Gender",("F","M"))
-    Dependent_count= col1.selectbox("Number of Dependents",(0,1,2,3,4,5))
+    Dependent_count= col1.number_input("Number of Dependents", min_value=0, max_value=5)
     Education_Level= col2.selectbox("Education Level",("Graduate","High School","Uneducated","College","Post-Graduate","Doctorate"))
     Marital_Status=col1.selectbox("Martial Status",("Married","Single","Divorced"))
     Income_Category=col2.selectbox("Income Category",("Less than $40K","$40K - $60K","$80K - $120K","$60K - $80K","abc","$120K +"))
