@@ -63,7 +63,7 @@ def predict_churn(Customer_Age,Months_on_book,Total_Relationship_Count,Months_In
     # remainder = "drop" has been used, it will drop the variables that are not present in "numerical_features"
     # and "categorical_features"
     pipe = Pipeline(steps=[("pre", preprocessor)])
-    data3=pipe.fit_transform(np.array(data2).reshape(1,-1)
+    data3=pipe.fit_transform(np.array(data2).reshape(1,-1))
     print(data3)
     print(np.array(data3))
     prediction=5
