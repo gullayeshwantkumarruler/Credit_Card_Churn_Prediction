@@ -9,7 +9,7 @@ from sklearn.impute import SimpleImputer
 import joblib
 import pickle
 
-best_model=joblib.load("model_pickle")
+best_model=joblib.load("model_pkl")
 # x_train=joblib.load("dataset.pkl")
 
 
