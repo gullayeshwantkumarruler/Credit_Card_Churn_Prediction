@@ -57,7 +57,7 @@ def main():
     Total_Trans_Amt=col2.number_input("Total Transaction Amount", min_value=0, max_value=50000)
     Total_Trans_Ct=col1.number_input("Number of Transactions", min_value=0, max_value=200)
     Total_Ct_Chng_Q4_Q1=col2.number_input("change in total count", min_value=0, max_value=100)
-    Avg_Utilization_Ratio=col1.number_input("utilization ratio", min_value=0, max_value=1)
+    Avg_Utilization_Ratio=col1.number_input("utilization ratio", min_value=0.0, max_value=1.0)
     # categorical
     Gender= col2.selectbox("Gender",("F","M"))
     Dependent_count= col1.number_input("Number of Dependents", min_value=0, max_value=5)
